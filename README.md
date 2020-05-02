@@ -7,5 +7,6 @@ The content I came across was overwhelming, accurate and fun to watch and I wish
 ## Topic :
 The sketches in the repository are **a true inspiration from daniel's tutorials** with some minor fixes and some experiments. 
 
+## Graph Algorithms
 ### A* Pathfinding
 A* is a search algorithm which is flexible and easy to apply algorithm because of it’s wide application from other search algorithms. It’s most preferable application and the part I love the most are videogames and from there it can be understood how this algorithm is applied on certain jobs like path finding in the context of game environment. Further [details](https://www.geeksforgeeks.org/a-search-algorithm/).
