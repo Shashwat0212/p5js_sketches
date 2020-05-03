@@ -30,7 +30,7 @@ function draw() {
   let camX = map(mouseX, 0, width, -200, 200);
   let camY = map(mouseY, 0, height, -200, 200);
   camera(camX, camY, height / 2.0 / tan((PI * 30.0) / 180.0), 0, 0, 0, 0, 1, 0);
-  scale(8);
+  scale(6);
   stroke(255);
 //   noFill();
   noStroke();
