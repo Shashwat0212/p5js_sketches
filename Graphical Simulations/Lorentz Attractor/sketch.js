@@ -41,7 +41,8 @@ function draw() {
 	beginShape();
 
 	for ( let v of points ) {
-		stroke( hu, 0, hu );
+		noFill();
+		stroke( hu, 0, 0 );
 		vertex( v.x, v.y, v.z );
 		//var offset = p5.Vector.random3D();
 		//offset.mult(0.1);
