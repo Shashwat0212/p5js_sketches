@@ -9,44 +9,41 @@ let c = 8.0 / 3.0;
 let points = new Array();
 
 function setup() {
-	createCanvas( 800, 600, WEBGL );
-	colorMode( HSB );
-	frameRate( 120 );
+  createCanvas(800, 600, WEBGL);
+  colorMode(HSB);
 }
 
 function draw() {
-	background( 0 );
+  background(0);
 
-	let dt = 0.01;
-	let dx = a * ( y - x ) * dt;
-	let dy = ( x * ( b - z ) - y ) * dt;
-	let dz = ( x * y - c * z ) * dt;
-	x = x + dx;
-	y = y + dy;
-	z = z + dz;
+  let dt = 0.01;
+  let dx = a * (y - x) * dt;
+  let dy = (x * (b - z) - y) * dt;
+  let dz = (x * y - c * z) * dt;
+  x = x + dx;
+  y = y + dy;
+  z = z + dz;
 
-	points.push( new p5.Vector( x, y, z ) );
+  points.push(new p5.Vector(x, y, z));
 
-	translate( 0, 0, -80 );
-	let camX = map( mouseX, 0, width, -200, 200 );
-	let camY = map( mouseY, 0, height, -200, 200 );
-	camera( camX, camY, height / 2.0 / tan( ( PI * 30.0 ) / 180.0 ), 0, 0, 0, 0, 1, 0.5 );
-// 	console.log( height / 2.0 / tan( ( PI * 30.0 ) / 180.0 ) );
-	scale( 8 );
-	stroke( 255 );
-	noFill();
+  translate(0, 0, -80);
+  let camX = map(mouseX, 0, width, -200, 200);
+  let camY = map(mouseY, 0, height, -200, 200);
+  camera(camX, camY, height / 2.0 / tan((PI * 30.0) / 180.0), 0, 0, 0, 0, 1, 0);
+  scale(5);
+  stroke(255);
+  noFill();
 
-	let hu = 0;
-	beginShape();
+  let hu = 0;
+  beginShape();
 
-	for ( let v of points ) {
-// 		noFill();
-		stroke( hu, 255, 255 );
-		vertex( v.x, v.y, v.z );
-		hu += 1;
-		if ( hu > 255 ) {
-			hu = 0;
-		}
-	}
-	endShape();
+  for (let v of points) {
+    stroke(hu, 255, 255);
+    vertex(v.x, v.y, v.z);
+    hu += 1;
+    if (hu > 255) {
+      hu = 0;
+    }
+  }
+  endShape();
 }
