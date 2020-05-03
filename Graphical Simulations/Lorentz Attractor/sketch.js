@@ -31,7 +31,6 @@ function draw() {
 	let camX = map( mouseX, 0, width, -200, 200 );
 	let camY = map( mouseY, 0, height, -200, 200 );
 	camera( camX, camY, height / 2.0 / tan( ( PI * 30.0 ) / 180.0 ), 0, 0, 0, 0, 1, 0.5 );
-	//translate(width/2, height/2);̥
 	console.log( height / 2.0 / tan( ( PI * 30.0 ) / 180.0 ) );
 	scale( 5 );
 	stroke( 255 );
@@ -41,19 +40,13 @@ function draw() {
 	beginShape();
 
 	for ( let v of points ) {
-		noFill();
-		stroke( hu, 0, 0 );
+// 		noFill();
+		stroke( hu, 255, 255 );
 		vertex( v.x, v.y, v.z );
-		//var offset = p5.Vector.random3D();
-		//offset.mult(0.1);
-		//v.add(offset);
-
-		hu += 50;
+		hu += 1;
 		if ( hu > 255 ) {
 			hu = 0;
 		}
 	}
 	endShape();
-
-	//println(x,y,z);
 }
