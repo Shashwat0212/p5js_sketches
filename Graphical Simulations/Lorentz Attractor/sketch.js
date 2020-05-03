@@ -30,17 +30,19 @@ function draw() {
   let camX = map(mouseX, 0, width, -200, 200);
   let camY = map(mouseY, 0, height, -200, 200);
   camera(camX, camY, height / 2.0 / tan((PI * 30.0) / 180.0), 0, 0, 0, 0, 1, 0);
-  scale(5);
+  scale(8);
   stroke(255);
-  noFill();
+//   noFill();
+  noStroke();
 
   let hu = 0;
   beginShape();
 
   for (let v of points) {
-    stroke(hu, 255, 255);
+//     stroke(hu, 255, 255);
+    fill(hu, 255, 255);
     vertex(v.x, v.y, v.z);
-    hu += 1;
+    hu += 5;
     if (hu > 255) {
       hu = 0;
     }
